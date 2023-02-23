@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sabotage Game</title>
+		<link href='https://fonts.googleapis.com/css?family=Titan One' rel='stylesheet'>
+		<style>
+			body {			background-color:	blue; }
+			#box1 {			position: 			relative;
+							top: 				0px;
+							left: 				0px;
+							width: 				800px;
+							height: 			600px;
+							display: 			block;
+							margin: 			0px auto;
+							padding: 			0px;
+							background-color: 	lightblue;
+							overflow:			hidden; }
+			p {				color: 				black;
+							text-align: 		center;
+							font-size: 			3em;
+							font-family: 		'Titan One', serif;}
+			button {		position: 			realative;
+							top: 				550px;
+							left: 				0px;
+							width: 				200px;
+							height: 			60px;
+							display: 			block;
+							margin: 			0px auto;
+							padding: 			0px;
+							border: 			5px solid black;
+							background-color: 	white;
+							color: 				black;
+							font-size: 			2em;
+							font-family: 		'Titan One', serif; }
+			button:hover {	border: 			5px solid red;
+							color: 				red; }
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script>
+			function initializeSplash() {
+
+				$(document).ready(function(){
+					$("#title").hide();
+					$("#name").hide();
+					$("#class").hide();
+					$("#commando").hide();
+					$("#commando2").hide();
+					$("#chopper").hide();
+					$("#chopper2").hide();
+					$("#title").fadeTo(4000, 1);
+					$("#name").fadeTo(5000, 1);
+					$("#class").fadeTo(6000, 1);
+					$(document).ready(function(){
+						$("#commando").fadeTo(4000,1);
+						$("#commando2").fadeTo(4000,1);
+						$("#chopper").fadeTo(4000,1);
+						$("#chopper2").fadeTo(4000,1);
+					});
+				});
+				
+
+			}
+		</script>
+	</head>
+	<body onload="initializeSplash()" >
+		<div id="box1">
+			<p id="title">SABOTAGE GAME</p>
+			<p id="name" style="font-size: 1.8em;">Andy Vang</p>
+			<p id="class" style="font-size: 1.8em;">Final Project For CSCI 2442 – Saint Paul College</p>
+			<img id="commando" style="position: absolute; left: 250px; top: 300px;" src="./images/commandoSprite.png" />
+			<p id="commando2" style="position:absolute; left: 370px; font-size: 1.9em;">5 points</p>
+			<img id="chopper" style="position: absolute; left: 220px; top: 400px;" src="./images/chopper1.png" />
+			<p id="chopper2" style="position:absolute; left: 370px; font-size: 1.9em; top: 380px;">25 points</p>
+			<a href="SabotageB.html" style="position: absolute; top: 500px; left: 150px;"><button type="button">START</button></a>
+			<a href="SabotageA2.html" style="position: absolute; top: 500px; left: 440px;"><button type="button" style="font-size: 1.4em;">HOW TO PLAY & STORY</button></a>
+		</div>
+	</body>
+</html>

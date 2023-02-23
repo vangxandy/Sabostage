@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sabotage Game</title>
+		<link href='https://fonts.googleapis.com/css?family=Titan One' rel='stylesheet'>
+		<style>
+			body {			background-color:	blue; }
+			#box1 {			position: 			relative;
+							top: 				0px;
+							left: 				0px;
+							width: 				800px;
+							height: 			600px;
+							display: 			block;
+							margin: 			0px auto;
+							padding: 			0px;
+							background-color: 	lightblue;
+							overflow:			hidden; }
+			p {				color: 				black;
+							text-align: 		center;
+							font-size: 			3em;
+							font-family: 		'Titan One', serif;}
+			button {		position: 			realative;
+							top: 				550px;
+							left: 				0px;
+							width: 				200px;
+							height: 			60px;
+							display: 			block;
+							margin: 			0px auto;
+							padding: 			0px;
+							border: 			5px solid black;
+							background-color: 	white;
+							color: 				black;
+							font-size: 			2em;
+							font-family: 		'Titan One', serif; }
+			button:hover {	border: 			5px solid red;
+							color: 				red; }
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script>
+			function initializeSummary() {
+
+
+				var url = new URLSearchParams(window.location.search);
+				var score = url.get("score");
+				var commandoFired = url.get("commandoFired");
+				var chopperShot = url.get("chopperShot");
+				var totalShot = url.get("totalShot");
+				var percent = ((commandoFired + chopperShot)/ totalShot) * 100;
+
+				document.getElementById("score").value = score;
+				document.getElementById("commandoFired").value = commandoFired;
+				document.getElementById("chopperShot").value = chopperShot;
+				document.getElementById("percentage").value = percent;
+
+				$(document).ready(function(){
+					$("#first").hide();
+					$("#second").hide();
+					$("#third").hide();
+					$("#fourth").hide();
+					$("#fifth").hide();
+					$("#first").fadeTo(4000, 1);
+					$("#second").fadeTo(5000, 1);
+					$("#third").fadeTo(6000, 1);
+					$("#fourth").fadeTo(6000, 1);
+					$("#fifth").fadeTo(6000, 1);
+				});   
+			}
+		</script>
+	</head>
+	<body onload="initializeSummary()" >
+		<div id="box1">
+			<p id="first">Score: <span id="score">0</span></p>
+            <p id="second">Commando shot: <span id="commandoFired">0 </span><img src="./images/commandoSprite.png"></p>
+            <p id="third">Choppers shot: <span id="chopperShot">0 </span><img src="./images/chopper1.png"></p>
+            <p id="fourth">Percentage of hits: <span id="percentage">0 </span>%</p>
+			<a href="SabotageA.html" id="fifth"><button type="button">RESTART</button></a>
+		</div>
+	</body>
+</html>
